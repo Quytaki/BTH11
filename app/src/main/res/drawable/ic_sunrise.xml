@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Mặt trời mọc -->
+    <path
+        android:fillColor="#FF9800"
+        android:pathData="M12,3C14.21,3 16,4.79 16,7C16,9.21 14.21,11 12,11C9.79,11 8,9.21 8,7C8,4.79 9.79,3 12,3M12,5C10.34,5 9,6.34 9,8C9,9.66 10.34,11 12,11C13.66,11 15,9.66 15,8C15,6.34 13.66,5 12,5ZM12,12C8.69,12 6,14.69 6,17H18C18,14.69 15.31,12 12,12ZM12,0V3C12,3 13,3 13,4C13,5 14,5 14,6H10C10,5 11,5 11,4C11,3 12,3 12,3V0H12Z" />
+
+</vector>

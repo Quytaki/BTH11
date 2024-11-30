@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Biểu tượng nhiệt độ thấp nhất với hình nhiệt kế và mũi tên đi xuống -->
+    <!-- Nhiệt kế -->
+    <path
+        android:fillColor="#FF5722"
+        android:pathData="M10,2A2,2 0 0,1 12,4V13.5C13.17,14.07 14,15.24 14,16.5A3.5,3.5 0 0,1 10.5,20A3.5,3.5 0 0,1 7,16.5C7,15.24 7.83,14.07 9,13.5V4A2,2 0 0,1 10,2M10,4A1,1 0 0,0 9,5V14H11V5A1,1 0 0,0 10,4Z" />
+
+    <!-- Mũi tên đi xuống -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M16,17L12,21L8,17H10.5V13H13.5V17H16Z" />
+
+</vector>
