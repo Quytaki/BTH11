@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="background_color">#F5F5F5</color> <!-- Hoặc giá trị màu khác -->
+
+        <!-- Màu chính -->
+        <color name="primary_color">#FFD54F</color>
+
+        <!-- Màu nhấn (accent) -->
+        <color name="accent_color">#FFA726</color>
+
+        <!-- Màu nền card -->
+        <color name="card_color">#FFFFFF</color>
+
+        <!-- Màu lỗi -->
+        <color name="error_color">#FF5252</color>
 </resources>

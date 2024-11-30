@@ -1,112 +1,140 @@
-<LinearLayout
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@android:color/white">
+    android:background="@drawable/ic_bg"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvHeader"
-        android:layout_width="match_parent"
+    <!-- Thanh tìm kiếm (Search bar) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/searchCard"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/etCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="48dp"
+                android:background="@null"
+                android:hint="Enter Your City Name"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textColorHint="#9E9E9E" />
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_search"
+                app:tint="#000000" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Khu vực hiển thị thông tin (Information section) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/infoCard"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="MY WEATHER"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
-        android:padding="8dp"
-        android:background="#FFD54F" />
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/searchCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp">
-
-        <EditText
-            android:id="@+id/etCity"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Location"
-            android:inputType="text"
-            android:background="@android:color/transparent"
-            android:padding="8dp"
-            android:gravity="center_vertical"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/btnSet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SET"
-            android:background="@android:color/transparent"
-            android:textColor="#FFD54F" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/card_background"
-        android:padding="16dp">
-
-        <ImageView
-            android:id="@+id/ivWeatherIcon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_sun_cloud" />
-
-        <TextView
-            android:id="@+id/tvTemperature"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Nhiệt độ"
-            android:textSize="36sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="8dp" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tvDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="trạng thái"
-            android:textSize="18sp"
-            android:layout_marginTop="4dp" />
+            <!-- Độ ẩm -->
+            <TextView
+                android:id="@+id/tvHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Humidity: --%"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:drawableLeft="@drawable/ic_humidity"
+                android:drawablePadding="8dp" />
 
-        <TextView
-            android:id="@+id/tvDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Sunday, July 21"
-            android:textSize="14sp"
-            android:textColor="@android:color/darker_gray"
-            android:layout_marginTop="4dp" />
+            <!-- Nhiệt độ tối thiểu -->
+            <TextView
+                android:id="@+id/tvMinTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Min Temperature: --°"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:drawableLeft="@drawable/ic_temp_min"
+                android:drawablePadding="8dp" />
 
-        <!-- Thêm các TextView cho độ ẩm và gió -->
-        <TextView
-            android:id="@+id/tvHumidity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="độ ẩm"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="8dp" />
+            <!-- Nhiệt độ tối đa -->
+            <TextView
+                android:id="@+id/tvMaxTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Max Temperature: --°"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:drawableLeft="@drawable/ic_temp_max"
+                android:drawablePadding="8dp" />
 
-        <TextView
-            android:id="@+id/tvWindSpeed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="tốc độ gió"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="4dp" />
-    </LinearLayout>
-</LinearLayout>
+            <!-- Mặt trời mọc -->
+            <TextView
+                android:id="@+id/tvSunrise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Sunrise: --"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:drawableLeft="@drawable/ic_sunrise"
+                android:drawablePadding="8dp" />
+
+            <!-- Mặt trời lặn -->
+            <TextView
+                android:id="@+id/tvSunset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunset: --"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:drawableLeft="@drawable/ic_sunset"
+                android:drawablePadding="8dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

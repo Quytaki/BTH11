@@ -36,7 +36,9 @@ android {
 }
 
 dependencies {
+    implementation (libs.androidx.cardview)
     implementation(libs.glide)
+    implementation(libs.androidx.recyclerview)
     kapt(libs.glide.compiler)
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)

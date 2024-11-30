@@ -3,11 +3,14 @@ package com.example.bth11
 data class WeatherResponse(
     val main: Main,
     val weather: List<Weather>,
-    val wind: Wind
+    val wind: Wind,
+    val sys: Sys
 )
 data class Main(
-    val temp: Float,
-    val humidity: Int // Độ ẩm
+    val temp: Double,
+    val temp_min: Double,
+    val temp_max: Double,
+    val humidity: Int
 )
 
 data class Weather(
@@ -17,4 +20,8 @@ data class Weather(
 
 data class Wind(
     val speed: Double // Tốc độ gió
+)
+data class Sys(
+    val sunrise: Long,
+    val sunset: Long
 )
